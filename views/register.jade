@@ -1,0 +1,118 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Go Afliate Frointier / Let us know
+    link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script.
+      function addFadeOutListener(className) {
+        var element = document.querySelector(className);
+        if (element) {
+          element.addEventListener('animationend', function() {
+            this.style.display = 'none';
+          });
+        }
+      }
+
+      window.onload = function() {
+        addFadeOutListener('.alert-success');
+        addFadeOutListener('.alert-danger');
+      };
+
+  body(style='background-color: #F8F9FA; color: #343A40;')
+
+    // Add this div for success messages
+    if message == true
+      .alert.alert-success.fixed-top.animate__animated.animate__fadeInDown(m-2)
+        | Success! Your message has been sent.
+        script.
+          setTimeout(function(){
+            document.querySelector('.alert-success').classList.add('fadeOut');
+          }, 5000);    
+    if message == 'Registered'
+      .alert.alert-success.fixed-top.animate__animated.animate__fadeInDown(m-2).text-center
+        | Registered Already!
+        script.
+          setTimeout(function(){
+            document.querySelector('.alert-success').classList.add('fadeOut');
+          }, 5000);
+
+    // Add this div for error messages
+    if message == false
+      .alert.alert-danger.fixed-top.animate__animated.animate__fadeInDown(m-2)
+        | Error! Something went wrong. Please try again.
+        script.
+          setTimeout(function(){
+            document.querySelector('.alert-danger').classList.add('fadeOut');
+          }, 5000);
+
+
+    // Header Section
+    // Large Screens Nav
+    header.navbar.navbar-dark.bg-dark.d-none.d-lg-block
+      .container
+        a.navbar-brand(href='#') Your Website Logo/Name
+        .navbar-nav.ml-auto.d-inline-block
+          a.btn.btn-secondary.nav-link.p-3(href='#home') Home
+          a.btn.btn-secondary.nav-link.p-3(href='#about') About
+          a.btn.btn-secondary.nav-link.p-3(href='#contact') Contact
+
+    // Small Screens Nav
+    header.navbar.navbar-dark.bg-dark.d-lg-none
+      .container
+        a.navbar-brand(href='#') Your Website Logo/Name
+        button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNav
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href='#') Home
+            li.nav-item
+              a.nav-link(href='#') About
+            li.nav-item
+              a.nav-link(href='#') Contact
+
+    // Hero Section
+    .container.mt-5
+      .row
+        .col-lg-6
+          h1(style='font-size: 3rem;') Go affliate frontier !
+          p.lead Are you a struggling worker and wants to elevate your income? You’re at the right place!  Are you idle and want to feel a sense of responsibility and start up a high returns business? You’re at the right place! Or you just see the figures your friends and other people have generated from the online space and want to join in? You’re still at the right place  The “Your Affiliate Strategy” course guides you to understand affiliate marketing strategies and cheat codes to maximize your income. Sign up below!
+        .col-lg-6
+          img.img-fluid.animate-right(src='./images/pic.jpeg', alt='Hero Image', style='width: 600px; height: 500px; border-radius:20px;')
+
+    // Form Section
+    .container.mt-5
+      form(action='/add-New', method='post')
+        .form-row
+          .form-group.col-md-6.m-2
+            label(for='firstName') First Name
+            input#firstName.form-control(type='text', placeholder='Enter your first name', name='firstName',required)
+          .form-group.col-md-6.m-2
+            label(for='lastName') Last Name
+            input#lastName.form-control(type='text', placeholder='Enter your last name', name='lastName',required)
+        .form-group.m-2
+          label(for='email') Email
+          input#email.form-control(type='email', placeholder='Enter your email', name='email',required)
+        .form-group.m-2
+          label(for='phone') Phone Number
+          input#phone.form-control(type='tel', placeholder='Enter your phone number', name='phone',required)
+
+        // Additional Form Fields can be added as needed
+
+        button.btn.btn-primary(type='submit') Submit
+
+    // Footer Section
+    footer.mt-5.py-3.text-center.bg-dark.text-white
+      .container
+        p
+          small © 2023 Your Company Name. All Rights Reserved.
+        p
+          small
+            | Contact us at 
+            a(href='mailto:info@yourcompany.com') info@yourcompany.com
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js')
+

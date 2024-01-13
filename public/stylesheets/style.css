@@ -1,0 +1,43 @@
+.container{
+  background-image: (url('https://placekitten.com/300/200'));
+}
+.navbar-nav.ml-auto a {
+  display: inline !important;
+}
+@keyframes animate-right {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-right {
+  animation-name: animate-right;
+  animation-duration: 1s; /* you can set this to whatever you like */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); /* Adjust this value based on your needs */
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out; /* Adjust the duration and timing function as needed */
+}
+
+/* Add this rule to hide the element after the animation is complete */
+.fadeOut.hidden {
+  display: none;
+}
+
+
